@@ -1,0 +1,16 @@
+name: Chopsticks
+version: 1.0
+description: A new way of eating food
+author: jacklin213
+
+main: me.jacklin213.chopsticks.Chopsticks
+
+commands:
+  chopsticks:
+    description: Gives player a chopstick
+    permission: chopstick.give
+
+permissions:
+  chopstick.give:
+    description: Allows a player to spawn a chopstick defined in config
+    default: op

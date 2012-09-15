@@ -1,0 +1,11 @@
+###############################################
+# =========================================== #
+# ++++++++++++    Chopsticks     ++++++++++++ #
+# =========================================== #
+###############################################
+
+# Put the material ID of what item you want as the chopstick.
+# Do not put letters into Chopsticks or it wont work.
+# By default it has stick(ID: 280)
+# As you should see the ID is in orange, your item ID should too.
+Chopstick: 280
