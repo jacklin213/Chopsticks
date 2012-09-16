@@ -6,7 +6,6 @@ import org.bukkit.event.EventHandler;
 import org.bukkit.event.Listener;
 import org.bukkit.event.block.Action;
 import org.bukkit.event.player.PlayerInteractEvent;
-import org.bukkit.inventory.ItemStack;
 
 public class ChopsticksListener implements Listener {
 	Chopsticks plugin;
@@ -14,7 +13,7 @@ public class ChopsticksListener implements Listener {
 	public ChopsticksListener(Chopsticks instance) {
 		plugin = instance;
 	}
-
+	
 	@EventHandler
 	public void onEat(PlayerInteractEvent event) {
 		Player player = event.getPlayer();
@@ -22,6 +21,9 @@ public class ChopsticksListener implements Listener {
 				|| (event.getAction() == Action.RIGHT_CLICK_AIR)) {
 			try {
 				int materialid = plugin.getConfig().getInt("Chopstick");
+				if (player.getItemInHand().getType() == Material.getMaterial(materialid)) {
+					player.sendMessage("eating");
+				}
 			} catch (NumberFormatException e) {
 				plugin.getLogger().warning(
 						plugin.pdfFile.getName()
@@ -30,10 +32,7 @@ public class ChopsticksListener implements Listener {
 						.warning(
 								plugin.pdfFile.getName()
 										+ " Please make sure to check the value of Chopstick: in the config.yml!");
-			}
-			if (player.getItemInHand().getType() == Material.getMaterial(materialid)) {
-				player.sendMessage("eating");
-			}
+			}			
 		}
 	}
 }

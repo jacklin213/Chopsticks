@@ -1,8 +1,0 @@
-name: Chopsticks
-version: 1.0
-description: A plugin which makes you heal more when eating with Chopsticks
-author: jacklin213
-
-main: me.jacklin213.chopsticks.Chopsticks
-platform: SERVER
-depend: [SpoutPlugin]
